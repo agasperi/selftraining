@@ -1,0 +1,15 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+	testCompile('junit:junit:4.12')
+	testCompile('org.mockito:mockito-core:2.19.1')
+}
