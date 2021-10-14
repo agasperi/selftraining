@@ -1,0 +1,161 @@
+**** Spring Boot
+
+*** Spring
+http://spring.io/
+
+** Spring Guides
+https://spring.io/guides
+
+** Spring Projects
+http://spring.io/projects
+
+** Spring Boot
+https://spring.io/projects/spring-boot
+
+* Spring Boot Reference Guide
+https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/
+
+* Building an Application with Spring Boot
+https://spring.io/guides/gs/spring-boot/
+
+* Building a RESTful Web Service
+https://spring.io/guides/gs/rest-service
+
+* Securing a Web Application
+https://spring.io/guides/gs/securing-web/
+
+* Building REST services with Spring
+https://spring.io/guides/tutorials/rest/
+
+* Building a RESTful Web Service with Spring Boot Actuator
+https://spring.io/guides/gs/actuator-service/
+
+** Spring Data
+https://spring.io/projects/spring-data
+
+* Accessing Data with JPA (Spring Data JPA)
+https://spring.io/guides/gs/accessing-data-jpa/
+
+* Accessing JPA Data with REST
+https://spring.io/guides/gs/accessing-data-rest/
+
+* Accessing data with MySQL
+https://spring.io/guides/gs/accessing-data-mysql/
+
+** Deploying Spring Boot
+
+* Spring Boot with Docker
+https://spring.io/guides/gs/spring-boot-docker/
+
+* Deploying a Spring Boot app to Azure
+https://spring.io/guides/gs/spring-boot-for-azure/
+
+* Accessing Neo4j Data with REST
+https://spring.io/guides/gs/accessing-neo4j-data-rest/
+
+* Accessing Data in Pivotal GemFire with REST
+https://spring.io/guides/gs/accessing-gemfire-data-rest/
+
+* Accessing MongoDB Data with REST
+https://spring.io/guides/gs/accessing-mongodb-data-rest/
+
+*** DZone
+https://dzone.com
+
+**Books
+
+* Getting Started With Spring Boot and Microservices
+https://dzone.com/refcardz/getting-started-with-spring-boot-and-microservices?chapter=1
+
+*** InfoQ
+https://www.infoq.com
+
+** Books
+
+* Practical Guide to Building an API Back End with Spring Boot
+https://www.infoq.com/minibooks/spring-boot-building-api-backend
+
+* The InfoQ eMag: Microservices - Patterns and Practices
+https://www.infoq.com/minibooks/microservices-patterns-practices
+
+*** Safari Books Online
+https://www.safaribooksonline.com/
+
+** Learning Path
+
+* Learn Spring and Spring Boot
+https://www.safaribooksonline.com/videos/learning-path-learn/9781491970836
+
+* Spring: Work with Data and Cloud in Spring 5
+https://www.safaribooksonline.com/learning-paths/learning-path-spring/9781788992114/
+
+** Videos
+
+*Spring Design Patterns and Best Practices
+https://www.safaribooksonline.com/videos/spring-design-patterns/9781788291897
+
+* Master Microservices with Spring Boot and Spring Cloud
+https://www.safaribooksonline.com/videos/master-microservices-with/9781789132779/
+
+** Books
+
+* Head First: Design Patterns
+https://www.safaribooksonline.com/library/view/head-first-design/0596007124/index.html
+
+* Mastering Spring Boot 2.0
+https://www.safaribooksonline.com/library/view/mastering-spring-boot/9781787127562/
+
+
+**** Domain Driven Design
+
+*** DDD Community
+http://dddcommunity.org/
+
+*** DZone
+https://dzone.com
+
+**Books
+
+* Domain-Driven Design
+https://dzone.com/refcardz/getting-started-domain-driven?chapter=1
+
+* Microservices: Breaking Down the Monolith
+https://dzone.com/guides/microservices-breaking-down-the-monolith
+
+*** InfoQ
+https://www.infoq.com
+
+** Books
+
+*Domain Driven Design Quickly
+https://www.infoq.com/minibooks/domain-driven-design-quickly
+
+* The InfoQ eMag: Microservices vs. Monoliths - The Reality Beyond the Hype
+https://www.infoq.com/minibooks/emag-microservices-monoliths?useSponsorshipSuggestions=true&utm_source=minibooks_about_microservices&utm_medium=link&utm_campaign=microservices
+
+*** Domain Language
+http://domainlanguage.com/
+
+** Books
+
+* Domain-Driven Design Reference
+https://domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf
+
+*** Safari Books Online
+https://www.safaribooksonline.com/
+
+** Videos
+
+* Moving to Microservices: Using Domain-Driven Design to Break Down the Monolith
+https://www.safaribooksonline.com/videos/moving-to-microservices/9780134779270
+
+* Domain-Driven Design Distilled
+https://www.safaribooksonline.com/videos/domain-driven-design-distilled/9780134593449
+
+**Books
+
+* Patterns, Principles, and Practices of Domain-Driven Design
+https://www.safaribooksonline.com/library/view/patterns-principles-and/9781118714706/
+
+* Domain-Driven Design Distilled
+https://www.safaribooksonline.com/library/view/domain-driven-design-distilled/9780134434964/

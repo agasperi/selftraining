@@ -1,0 +1,86 @@
+*** Building Java Projects with Gradle
+mkdir -p src/main/java/hello
+gradle
+gradle task
+gradle build
+gradle wrapper --gradle-version 4.10.2
+jar tvf build/libs/gs-gradle-0.1.0.jar
+./gradlew clean
+./gradlew build
+
+* When is not able download gradle wrapper file: 
+- Download the file from the url shown in the message: Downloading https://services.gradle.org/distributions/gradle-{version}.zip
+- Copiar el archivo en la ruta de configuración del gradle y de instalación del wrapper: $HOME/.gradle/wrapper/dist/gradle-{version}/{hash}/
+- Descomprimir el contenido tal cual en la ruta.
+- Volver a compilar.
+
+*** Building Java Projects with Maven
+mvn -v
+mvn compile
+mvn package
+mvn install
+mvn test
+mkdir -p src/test/java/hello
+
+* Para corregir el warning: [WARNING] File encoding has not been set, using platform encoding Cp1252, i.e. build is platform dependent!
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+*** Building an Application with Spring Boot
+mkdir -p src/main/resources/
+vim src/main/resources/application.properties
+server.port = 8888
+mvn package && java -jar target/gs-spring-boot-0.1.0.jar
+./gradlew build && java -jar build/libs/gs-spring-boot-0.1.0.jar
+curl localhost:8888
+curl -X POST localhost:8080/actuator/shutdown
+spring run app.groovy -- --server.port=8888
+
+* Agregar un repositorio personalizado en build.gradle
+buildscript {
+    repositories {
+        maven{
+            url "https://artifactory.lima.bcp.com.pe/artifactory/public/"
+        }
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.5.RELEASE")
+    }
+}
+
+repositories {
+    maven{
+        url "https://artifactory.lima.bcp.com.pe/artifactory/public/"
+    }
+}
+
+* Activar el actuator/shutdown por URL en el application.properties
+management.endpoints.shutdown.enabled=true
+
+*** Securing a Web Application
+mkdir -p src/main/resources/templates
+./gradlew bootRun
+mvn -N io.takari:maven:wrapper
+
+*** Building REST services with Spring
+./mvnw clean spring-boot:run
+mvn clean spring-boot:run
+curl -v -X POST localhost:8888/employees -H 'Content-type:application/json' -d '{"name": "Samwise Gamgee", "role": "gardener"}'
+curl -v -X PUT localhost:8888/employees/3 -H 'Content-type:application/json' -d '{"name": "Samwise Gamgee", "role": "ring bearer"}'
+curl -v -X DELETE localhost:8888/employees/3
+
+*** Building a RESTful Web Service with Spring Boot Actuator
+mvn dependency:tree
+./gradlew dependencies
+
+*** Accessing JPA Data with REST
+curl -i -X POST -H "Content-Type:application/json" -d '{"firstName": "Frodo", "lastName": "Baggins"}' http://localhost:8080/people
+
+    -i ensures you can see the response message including the headers. The URI of the newly created Person is shown
+    -X POST signals this a POST used to create a new entry
+    -H "Content-Type:application/json" sets the content type so the application knows the payload contains a JSON object
+    -d '{"firstName": "Frodo", "lastName": "Baggins"}' is the data being sent
+
+curl -X PATCH -H "Content-Type:application/json" -d '{"firstName": "Bilbo Jr."}' http://localhost:8888/people/1

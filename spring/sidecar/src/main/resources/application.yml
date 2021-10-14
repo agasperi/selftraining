@@ -1,0 +1,54 @@
+server:
+  port: 8080
+
+# Actuator endpoint path (/admin/info, /admin/health, ...)
+server.servlet-path: /
+management.context-path: /admin
+
+# See
+# https://github.com/xetys/microservices-sidecar-example/blob/master/RailsApplication/Dockerfile
+# https://github.com/xetys/microservices-sidecar-example/blob/master/sidecar/src/main/resources/application.yml
+sidecar:
+  hostname: localhost
+  # port should be passed from command line (eg java -jar ... --sidecar.port=5432 ...)
+  port: 5432
+  # health-uri the service uri returning health data in the form of { "status": "UP" } or
+  # http://localhost:${sidecar.port}/${health-uri:health.json} if the service provides such endpoint.
+  # FIXME: Maybe adding ${management.context-path} to path
+  health-uri: http://localhost:${server.port}/delegating-status
+  # Sidecar controller
+  home-page-uri: http://${sidecar.hostname}:${server.port}/
+  postgres:
+    enabled: true
+
+# http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready-endpoints
+endpoints:
+  enabled: false
+  info:
+    enabled: true
+  health:
+    enabled: true
+    sensitive: false
+  metrics:
+    enabled: true
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/
+  instance:
+    appname: ${spring.application.name}
+    hostname: ${sidecar.hostname}
+    statusPageUrlPath: ${management.context-path}/info
+    healthCheckUrlPath: ${sidecar.health-uri}
+    preferIpAddress: true
+    metadataMap:
+      instanceId: ${sidecar.appName}:${sidecar.port}
+
+info:
+  app:
+    name: @project.artifactId@
+  build:
+    version: @project.version@

@@ -1,0 +1,4 @@
+# Generic app name, should be passed from command line (eg java -jar ... --sidecar.appName=POSTGRES-DB_DVDRENTAL ...)
+spring:
+  application:
+    name: ${sidecar.appName:Generic Sidecar}
