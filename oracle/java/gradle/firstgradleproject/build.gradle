@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+}
+
+group 'com.aega.training.gradle'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+sourceSets{
+    main
+    test
+    api
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile sourceSets.api.output;
+    testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
+}
+
+
+sourceSets{
+    integrationTest{
+        java{
+            srcDir 'src/integrationtest/java'
+        }
+
+        resources{
+            srcDir 'src/integrationtest/resources'
+        }
+
+        compileClasspath += sourceSets.main.runtimeClasspath
+    }
+}
+
+task integrationTest(type: Test){
+    description = "Runs Integration Test"
+    testClassesDir = sourceSets.integrationTest.output.classesDir
+    classpath += sourceSets.integrationTest.runtimeClasspath
+}
