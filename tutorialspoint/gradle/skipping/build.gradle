@@ -1,0 +1,13 @@
+task eclipse{
+	println 'Hello Eclipse'
+}
+
+eclipse.onlyIf {
+	project.hasProperty('usingEclipse')
+}
+
+eclipse.doFirst{
+	if(!usingEclipse){
+		throw new StopExecutionException()
+	}
+}

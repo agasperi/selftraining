@@ -1,0 +1,6 @@
+task groovyJDK << {
+	String myName = "Marc";
+	myName.each(){
+		println "${it}"
+	};
+}
