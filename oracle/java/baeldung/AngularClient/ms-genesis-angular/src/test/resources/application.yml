@@ -1,0 +1,19 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+
+application:
+  swagger:
+    title: '@project.name@'
+    description: '@project.description@'
+    version: '@project.version@'
+    contact:
+      name: Telefonica del Peru
+      url: https://www.telefonica.com.pe
+      email: correo@dominio.com
+    license:
+      type: copyright
+      url: https://www.telefonica.com.pe
+  catalog-error:
+    url: https://apimngr-genesis-prod.azure-api.net/errorlist/
+    subscription-key: 4b7d6d29e4be4b82b6418f44ceef60a2
