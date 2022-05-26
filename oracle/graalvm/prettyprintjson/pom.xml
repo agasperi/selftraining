@@ -1,0 +1,77 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.aega.graalvm</groupId>
+  <artifactId>prettyprintjson</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>prettyprintjson</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.graalvm.sdk</groupId>
+      <artifactId>graal-sdk</artifactId>
+      <version>22.1.0.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.2.2</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <classpathPrefix>lib/</classpathPrefix>
+              <mainClass>com.aega.graalvm.App</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <!--<profiles>
+    <profile>
+      <id>graal</id>
+      <build>
+          <plugins>
+              <plugin>
+                  <groupId>org.graalvm.nativeimage</groupId>
+                  <artifactId>native-image-maven-plugin</artifactId>
+                  <version>21.2.0</version>
+                  <configuration>
+                      <mainClass><com class="aega graalvm App"></com></mainClass>
+                  </configuration>
+                  <executions>
+                      <execution>
+                          <goals>
+                              <goal>native-image</goal>
+                          </goals>
+                          <phase>package</phase>
+                      </execution>
+                  </executions>
+              </plugin>
+          </plugins>
+      </build>
+    </profile>
+  </profiles>
+-->
+
+</project>
