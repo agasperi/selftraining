@@ -545,6 +545,8 @@ nbdist/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+# Snyk extension
+.dccache
 
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
