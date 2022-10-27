@@ -2,6 +2,7 @@ package com.aega.grpc;
 
 import java.util.concurrent.TimeUnit;
 
+import com.aega.grpc.client.CommodityPriceClient;
 import com.aega.grpc.client.HelloClient;
 import com.aega.grpc.client.StockClient;
 
@@ -28,6 +29,10 @@ public class App {
             stockClient.serverSideStreamingListOfStockPrices();
             stockClient.clientSideStreamingGetStatisticsOfStocks();
             stockClient.bidirectionalStreamingGetListsStockQuotes();
+
+            CommodityPriceClient commodityPriceClient = new CommodityPriceClient(channel);
+            commodityPriceClient.getBestCommodityPrice();
+            commodityPriceClient.getBidirectionalCommodityPriceLists();
         } finally {
             channel.shutdownNow()
                 .awaitTermination(5, TimeUnit.SECONDS);

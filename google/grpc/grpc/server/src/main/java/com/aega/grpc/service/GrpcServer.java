@@ -1,5 +1,6 @@
 package com.aega.grpc.service;
 
+import com.aega.grpc.service.impl.CommodityPriceServiceImpl;
 import com.aega.grpc.service.impl.HelloServiceImpl;
 import com.aega.grpc.service.impl.StockServiceImpl;
 import io.grpc.Server;
@@ -20,6 +21,7 @@ public class GrpcServer {
                 .forPort(port)
                 .addService(new HelloServiceImpl())
                 .addService(new StockServiceImpl())
+                .addService(new CommodityPriceServiceImpl())
                 .build();
     }
 

@@ -18,6 +18,7 @@ public class HelloClient {
     }
 
     public void hello() {
+        log.info("***** Hello Example *****: hello");
         HelloResponse helloResponse = stub.hello(HelloRequest.newBuilder()
             .setFirstName("Arnoldo")
             .setLastName("Gasperi")
