@@ -10,8 +10,8 @@
   <description>Repositorio para la demostracionn de uso del framework Genesis con gRPC</description>
       
   <modules>
-    <module>server</module>
-    <module>client</module>
+    <!--<module>server</module>
+    <module>client</module>-->
     <module>proto-common</module>
     <module>spring-server</module>
     <module>spring-client</module>
