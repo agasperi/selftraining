@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-config
+data:
+  application.properties: |
+    my.message=Hello World
+    logging.level.org.apache.camel=DEBUG
