@@ -1,0 +1,15 @@
+{
+  "name": "getting-started-with-webassembly",
+  "version": "1.0.0",
+  "description": "Getting Started with WebAssembly Course Code",
+  "main": "server.js",
+  "author": "Arnoldo Gasperi <agasperi@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

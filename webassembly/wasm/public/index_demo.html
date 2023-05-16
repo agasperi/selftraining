@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>WebAssembly Demo</title>
+    </head>
+    <body>
+        <h1>WebAssembly Demo</h1>
+        <script src="demo.js" charset="utf-8"></script>
+        <script>
+            // Wrap C _greet as a JS function
+            const greet = cwrap('greet', 'string', ['string'])
+        </script>
+    </body>
+</html>
