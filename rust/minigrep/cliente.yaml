@@ -1,0 +1,54 @@
+openapi: 3.0.0
+info:
+  title: Servicio de Clientes
+  description: API para procesar los datos de un cliente
+  version: 1.0.0
+
+paths:
+  /clientes:
+    post:
+      summary: Crear un nuevo cliente
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Cliente"
+      responses:
+        '201':
+          description: Cliente creado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Cliente"
+        '400':
+          description: Error en los datos proporcionados
+    get:
+      summary: Obtener la lista de clientes
+      responses:
+        '200':
+          description: Datos del cliente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/getClientes"
+        '404':
+          description: Cliente no encontrado
+
+components:
+  schemas:
+    getClientes:
+      type: array
+      items:
+        $ref: "#/components/schemas/Cliente"
+    Cliente:
+      type: object
+      properties:
+        id:
+          type: string
+        nombre:
+          type: string
+        apellido:
+          type: string
+        edad:
+          type: integer
