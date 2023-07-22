@@ -656,4 +656,11 @@ ClientBin/
 *.publishsettings
 orleans.codegen.cs
 
+################
+### DataBase ###
+################
+
 # End of .gitignore
+db-data/
+pgadmin-data/
+init.sql/
